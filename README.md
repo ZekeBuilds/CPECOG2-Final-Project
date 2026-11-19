@@ -25,6 +25,33 @@ We focus on **targeted outages**: the APs that phones hear most often fail first
 
 **Deadlines:** presentation, demo, report and code on **Nov 23**. Final revisions on Dec 4.
 
+## Next steps
+
+Code
+- [ ] Streamlit demo (`app.py`): pick a model, outage type and outage rate, run the outage simulation on the test scans live, and draw the graphs in the app. Every graph we present must come from the app.
+- [ ] Commit the train/validation split (`data/processed/split.npz`) so everyone uses the same split.
+- [ ] Pin exact library versions in `requirements.txt`.
+- [ ] Test the setup in a fresh environment by following this README from scratch.
+- [ ] Record a backup video of the demo in case the live demo fails.
+
+Report (IEEE format)
+- [ ] Introduction and problem formulation (reuse the proposal).
+- [ ] Review of related literature: a critical review, beyond a summary of each paper.
+- [ ] Dataset and preparation: source, license, analysis, cleaning, split, and leakage checks.
+- [ ] Model design and selection: candidate models, a comparison table, the APDropout design.
+- [ ] Experiments, tuning, and results: hyperparameter register (every setting marked tuned or fixed, with the reason), tuning logs, learning curves, test results, error analysis.
+- [ ] Implementation: framework features used, code structure, how to run it.
+- [ ] Discussion and conclusions: success criteria, limitations, ethics, SDG 9, future work.
+- [ ] Appendix: member contribution record.
+
+Presentation
+- [ ] Slides.
+- [ ] Every member can explain any part of the project.
+
+Optional
+- [ ] Let the autoencoder pretrain past its 100-epoch cap.
+- [ ] Try an APDropout rate above 0.9 for the MLP (0.9 was the edge of the grid).
+
 ## Results so far
 
 Test macro-F1 (%), mean of 5 seeds. Every number comes from `results/summary/test_table.csv`.
