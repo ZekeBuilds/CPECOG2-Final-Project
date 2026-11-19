@@ -1,0 +1,80 @@
+{
+  "rule": "max clean val macro-F1, ties -> fewer params",
+  "fixed": {
+    "l2": 0.0001,
+    "lr": 0.001,
+    "batch": 256
+  },
+  "best": {
+    "encoder": [
+      256,
+      64
+    ],
+    "dropout": 0.2,
+    "params": 160333,
+    "ae_epochs": 100,
+    "epochs": 25,
+    "ae_val_mse": 0.0012095370329916477,
+    "train_seconds": 50.6,
+    "accuracy": 0.9830905306971904,
+    "macro_f1": 0.9836558145544723
+  },
+  "grid": [
+    {
+      "encoder": [
+        256,
+        128
+      ],
+      "dropout": 0.2,
+      "params": 184973,
+      "ae_epochs": 100,
+      "epochs": 25,
+      "ae_val_mse": 0.0011869599111378193,
+      "train_seconds": 55.5,
+      "accuracy": 0.9791883454734651,
+      "macro_f1": 0.979644659256116
+    },
+    {
+      "encoder": [
+        256,
+        128
+      ],
+      "dropout": 0.4,
+      "params": 184973,
+      "ae_epochs": 100,
+      "epochs": 23,
+      "ae_val_mse": 0.0011869599111378193,
+      "train_seconds": 55.8,
+      "accuracy": 0.9789281997918835,
+      "macro_f1": 0.9790941011017532
+    },
+    {
+      "encoder": [
+        256,
+        64
+      ],
+      "dropout": 0.2,
+      "params": 160333,
+      "ae_epochs": 100,
+      "epochs": 25,
+      "ae_val_mse": 0.0012095370329916477,
+      "train_seconds": 50.6,
+      "accuracy": 0.9830905306971904,
+      "macro_f1": 0.9836558145544723
+    },
+    {
+      "encoder": [
+        256,
+        64
+      ],
+      "dropout": 0.4,
+      "params": 160333,
+      "ae_epochs": 100,
+      "epochs": 25,
+      "ae_val_mse": 0.0012095370329916477,
+      "train_seconds": 52.2,
+      "accuracy": 0.9802289281997919,
+      "macro_f1": 0.9804085501897118
+    }
+  ]
+}

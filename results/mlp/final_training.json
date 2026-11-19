@@ -1,0 +1,86 @@
+{
+  "arch": {
+    "hidden": [
+      256,
+      128
+    ],
+    "dropout": 0.2
+  },
+  "fixed": {
+    "l2": 0.0001,
+    "lr": 0.001,
+    "batch": 256
+  },
+  "runs": [
+    {
+      "model": "MLP",
+      "seed": 0,
+      "ap_dropout": 0.0,
+      "epochs": 38,
+      "train_seconds": 18.3
+    },
+    {
+      "model": "MLP",
+      "seed": 1,
+      "ap_dropout": 0.0,
+      "epochs": 40,
+      "train_seconds": 17.0
+    },
+    {
+      "model": "MLP",
+      "seed": 2,
+      "ap_dropout": 0.0,
+      "epochs": 32,
+      "train_seconds": 13.8
+    },
+    {
+      "model": "MLP",
+      "seed": 3,
+      "ap_dropout": 0.0,
+      "epochs": 38,
+      "train_seconds": 15.8
+    },
+    {
+      "model": "MLP",
+      "seed": 4,
+      "ap_dropout": 0.0,
+      "epochs": 37,
+      "train_seconds": 16.2
+    },
+    {
+      "model": "MLP + APDropout",
+      "seed": 0,
+      "ap_dropout": 0.9,
+      "epochs": 59,
+      "train_seconds": 26.2
+    },
+    {
+      "model": "MLP + APDropout",
+      "seed": 1,
+      "ap_dropout": 0.9,
+      "epochs": 40,
+      "train_seconds": 17.5
+    },
+    {
+      "model": "MLP + APDropout",
+      "seed": 2,
+      "ap_dropout": 0.9,
+      "epochs": 64,
+      "train_seconds": 26.1
+    },
+    {
+      "model": "MLP + APDropout",
+      "seed": 3,
+      "ap_dropout": 0.9,
+      "epochs": 46,
+      "train_seconds": 20.3
+    },
+    {
+      "model": "MLP + APDropout",
+      "seed": 4,
+      "ap_dropout": 0.9,
+      "epochs": 54,
+      "train_seconds": 23.0
+    }
+  ]
+}

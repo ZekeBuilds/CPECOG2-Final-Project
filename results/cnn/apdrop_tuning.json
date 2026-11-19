@@ -1,0 +1,79 @@
+{
+  "rule": "max val macro-F1 averaged over 3 scenarios x 6 rates (rate 0.0 = normal model, reference only)",
+  "arch": {
+    "proj": 256,
+    "dropout": 0.4
+  },
+  "best": {
+    "ap_dropout": 0.6,
+    "epochs": 42,
+    "train_seconds": 127.7,
+    "clean_macro_f1": 0.9864509236560708,
+    "mean_outage_macro_f1": 0.8236493653623174,
+    "per_scan_mean_macro_f1": 0.9597298183632361,
+    "persistent_mean_macro_f1": 0.9530983728306793,
+    "targeted_mean_macro_f1": 0.5581199048930369
+  },
+  "grid": [
+    {
+      "ap_dropout": 0.0,
+      "epochs": 31,
+      "train_seconds": 88.2,
+      "clean_macro_f1": 0.9860336403866555,
+      "mean_outage_macro_f1": 0.7189528231295437,
+      "per_scan_mean_macro_f1": 0.8807564180575649,
+      "persistent_mean_macro_f1": 0.8591106316608235,
+      "targeted_mean_macro_f1": 0.4169914196702429
+    },
+    {
+      "ap_dropout": 0.2,
+      "epochs": 43,
+      "train_seconds": 125.1,
+      "clean_macro_f1": 0.9873372788580829,
+      "mean_outage_macro_f1": 0.7805148279690417,
+      "per_scan_mean_macro_f1": 0.9366515912322546,
+      "persistent_mean_macro_f1": 0.922308185227901,
+      "targeted_mean_macro_f1": 0.4825847074469695
+    },
+    {
+      "ap_dropout": 0.4,
+      "epochs": 34,
+      "train_seconds": 107.5,
+      "clean_macro_f1": 0.9856702267167176,
+      "mean_outage_macro_f1": 0.8002300404547821,
+      "per_scan_mean_macro_f1": 0.9484739105096249,
+      "persistent_mean_macro_f1": 0.9440425386255722,
+      "targeted_mean_macro_f1": 0.5081736722291492
+    },
+    {
+      "ap_dropout": 0.6,
+      "epochs": 42,
+      "train_seconds": 127.7,
+      "clean_macro_f1": 0.9864509236560708,
+      "mean_outage_macro_f1": 0.8236493653623174,
+      "per_scan_mean_macro_f1": 0.9597298183632361,
+      "persistent_mean_macro_f1": 0.9530983728306793,
+      "targeted_mean_macro_f1": 0.5581199048930369
+    },
+    {
+      "ap_dropout": 0.8,
+      "epochs": 31,
+      "train_seconds": 103.4,
+      "clean_macro_f1": 0.984826150894318,
+      "mean_outage_macro_f1": 0.8209272100657063,
+      "per_scan_mean_macro_f1": 0.9465837320854087,
+      "persistent_mean_macro_f1": 0.9449736426181542,
+      "targeted_mean_macro_f1": 0.5712242554935559
+    },
+    {
+      "ap_dropout": 0.9,
+      "epochs": 30,
+      "train_seconds": 115.0,
+      "clean_macro_f1": 0.9807154331691651,
+      "mean_outage_macro_f1": 0.8193417574157196,
+      "per_scan_mean_macro_f1": 0.9441456450677191,
+      "persistent_mean_macro_f1": 0.9437148172748322,
+      "targeted_mean_macro_f1": 0.5701648099046076
+    }
+  ]
+}

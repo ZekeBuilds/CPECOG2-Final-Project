@@ -1,0 +1,120 @@
+{
+  "rule": "max clean val macro-F1, ties -> fewer params",
+  "fixed": {
+    "l2": 0.0001,
+    "lr": 0.001,
+    "batch": 256
+  },
+  "best": {
+    "hidden": [
+      256,
+      128
+    ],
+    "dropout": 0.2,
+    "params": 169485,
+    "epochs": 38,
+    "train_seconds": 15.4,
+    "accuracy": 0.9849115504682622,
+    "macro_f1": 0.9854748925383768
+  },
+  "grid": [
+    {
+      "hidden": [
+        256,
+        128
+      ],
+      "dropout": 0.2,
+      "params": 169485,
+      "epochs": 38,
+      "train_seconds": 15.4,
+      "accuracy": 0.9849115504682622,
+      "macro_f1": 0.9854748925383768
+    },
+    {
+      "hidden": [
+        256,
+        128
+      ],
+      "dropout": 0.4,
+      "params": 169485,
+      "epochs": 35,
+      "train_seconds": 14.2,
+      "accuracy": 0.9836108220603538,
+      "macro_f1": 0.9838156219084803
+    },
+    {
+      "hidden": [
+        512,
+        256
+      ],
+      "dropout": 0.2,
+      "params": 404493,
+      "epochs": 36,
+      "train_seconds": 20.2,
+      "accuracy": 0.9825702393340271,
+      "macro_f1": 0.9820898459171782
+    },
+    {
+      "hidden": [
+        512,
+        256
+      ],
+      "dropout": 0.4,
+      "params": 404493,
+      "epochs": 44,
+      "train_seconds": 24.4,
+      "accuracy": 0.9828303850156087,
+      "macro_f1": 0.9829678995721328
+    },
+    {
+      "hidden": [
+        512,
+        256,
+        128
+      ],
+      "dropout": 0.2,
+      "params": 436237,
+      "epochs": 43,
+      "train_seconds": 27.0,
+      "accuracy": 0.9838709677419355,
+      "macro_f1": 0.9846772877788038
+    },
+    {
+      "hidden": [
+        512,
+        256,
+        128
+      ],
+      "dropout": 0.4,
+      "params": 436237,
+      "epochs": 63,
+      "train_seconds": 39.0,
+      "accuracy": 0.9830905306971904,
+      "macro_f1": 0.9842018572449658
+    },
+    {
+      "hidden": [
+        1024,
+        512
+      ],
+      "dropout": 0.2,
+      "params": 1071117,
+      "epochs": 35,
+      "train_seconds": 35.5,
+      "accuracy": 0.981789802289282,
+      "macro_f1": 0.9814391985979479
+    },
+    {
+      "hidden": [
+        1024,
+        512
+      ],
+      "dropout": 0.4,
+      "params": 1071117,
+      "epochs": 44,
+      "train_seconds": 46.7,
+      "accuracy": 0.9794484911550468,
+      "macro_f1": 0.9789950798257405
+    }
+  ]
+}

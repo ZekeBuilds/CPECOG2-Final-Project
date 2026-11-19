@@ -1,0 +1,5 @@
+# Normalize line endings so Windows and Mac/Linux groupmates do not fight over CRLF/LF.
+* text=auto
+*.keras binary
+*.png binary
+*.pdf binary

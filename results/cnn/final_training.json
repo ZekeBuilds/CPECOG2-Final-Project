@@ -1,0 +1,83 @@
+{
+  "arch": {
+    "proj": 256,
+    "dropout": 0.4
+  },
+  "fixed": {
+    "l2": 0.0001,
+    "lr": 0.001,
+    "batch": 256
+  },
+  "runs": [
+    {
+      "model": "1D-CNN",
+      "seed": 0,
+      "ap_dropout": 0.0,
+      "epochs": 31,
+      "train_seconds": 109.9
+    },
+    {
+      "model": "1D-CNN",
+      "seed": 1,
+      "ap_dropout": 0.0,
+      "epochs": 63,
+      "train_seconds": 246.6
+    },
+    {
+      "model": "1D-CNN",
+      "seed": 2,
+      "ap_dropout": 0.0,
+      "epochs": 28,
+      "train_seconds": 106.5
+    },
+    {
+      "model": "1D-CNN",
+      "seed": 3,
+      "ap_dropout": 0.0,
+      "epochs": 34,
+      "train_seconds": 133.8
+    },
+    {
+      "model": "1D-CNN",
+      "seed": 4,
+      "ap_dropout": 0.0,
+      "epochs": 33,
+      "train_seconds": 126.5
+    },
+    {
+      "model": "1D-CNN + APDropout",
+      "seed": 0,
+      "ap_dropout": 0.6,
+      "epochs": 42,
+      "train_seconds": 178.4
+    },
+    {
+      "model": "1D-CNN + APDropout",
+      "seed": 1,
+      "ap_dropout": 0.6,
+      "epochs": 28,
+      "train_seconds": 109.0
+    },
+    {
+      "model": "1D-CNN + APDropout",
+      "seed": 2,
+      "ap_dropout": 0.6,
+      "epochs": 34,
+      "train_seconds": 110.6
+    },
+    {
+      "model": "1D-CNN + APDropout",
+      "seed": 3,
+      "ap_dropout": 0.6,
+      "epochs": 30,
+      "train_seconds": 102.1
+    },
+    {
+      "model": "1D-CNN + APDropout",
+      "seed": 4,
+      "ap_dropout": 0.6,
+      "epochs": 46,
+      "train_seconds": 151.5
+    }
+  ]
+}

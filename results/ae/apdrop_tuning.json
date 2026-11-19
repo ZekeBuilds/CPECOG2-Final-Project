@@ -1,0 +1,96 @@
+{
+  "rule": "max val macro-F1 averaged over 3 scenarios x 6 rates (rate 0.0 = normal model, reference only)",
+  "arch": {
+    "encoder": [
+      256,
+      64
+    ],
+    "dropout": 0.2
+  },
+  "best": {
+    "ap_dropout": 0.8,
+    "ae_epochs": 100,
+    "epochs": 42,
+    "ae_val_mse": 0.0004997921641916037,
+    "train_seconds": 60.1,
+    "clean_macro_f1": 0.979158618739474,
+    "mean_outage_macro_f1": 0.8299365195260315,
+    "per_scan_mean_macro_f1": 0.9436830791439794,
+    "persistent_mean_macro_f1": 0.9388387226024336,
+    "targeted_mean_macro_f1": 0.6072877568316817
+  },
+  "grid": [
+    {
+      "ap_dropout": 0.0,
+      "ae_epochs": 100,
+      "epochs": 25,
+      "ae_val_mse": 0.0012095370329916477,
+      "train_seconds": 49.2,
+      "clean_macro_f1": 0.9836558145544722,
+      "mean_outage_macro_f1": 0.7384717287288711,
+      "per_scan_mean_macro_f1": 0.8903195389914836,
+      "persistent_mean_macro_f1": 0.8795942770838133,
+      "targeted_mean_macro_f1": 0.44550137011131635
+    },
+    {
+      "ap_dropout": 0.2,
+      "ae_epochs": 100,
+      "epochs": 46,
+      "ae_val_mse": 0.0009724979172460735,
+      "train_seconds": 68.5,
+      "clean_macro_f1": 0.9849294124760636,
+      "mean_outage_macro_f1": 0.7875544344050285,
+      "per_scan_mean_macro_f1": 0.9323118558250667,
+      "persistent_mean_macro_f1": 0.916072659592076,
+      "targeted_mean_macro_f1": 0.5142787877979428
+    },
+    {
+      "ap_dropout": 0.4,
+      "ae_epochs": 100,
+      "epochs": 34,
+      "ae_val_mse": 0.000427942635724321,
+      "train_seconds": 77.3,
+      "clean_macro_f1": 0.9825649419706907,
+      "mean_outage_macro_f1": 0.8044314704194204,
+      "per_scan_mean_macro_f1": 0.9407856367043035,
+      "persistent_mean_macro_f1": 0.9341041201443033,
+      "targeted_mean_macro_f1": 0.5384046544096551
+    },
+    {
+      "ap_dropout": 0.6,
+      "ae_epochs": 100,
+      "epochs": 34,
+      "ae_val_mse": 0.00047235138481482863,
+      "train_seconds": 75.1,
+      "clean_macro_f1": 0.9790125161995488,
+      "mean_outage_macro_f1": 0.8101379265987788,
+      "per_scan_mean_macro_f1": 0.9425176901461146,
+      "persistent_mean_macro_f1": 0.9406857397657281,
+      "targeted_mean_macro_f1": 0.5472103498844939
+    },
+    {
+      "ap_dropout": 0.8,
+      "ae_epochs": 100,
+      "epochs": 42,
+      "ae_val_mse": 0.0004997921641916037,
+      "train_seconds": 60.1,
+      "clean_macro_f1": 0.979158618739474,
+      "mean_outage_macro_f1": 0.8299365195260315,
+      "per_scan_mean_macro_f1": 0.9436830791439794,
+      "persistent_mean_macro_f1": 0.9388387226024336,
+      "targeted_mean_macro_f1": 0.6072877568316817
+    },
+    {
+      "ap_dropout": 0.9,
+      "ae_epochs": 100,
+      "epochs": 42,
+      "ae_val_mse": 0.0005114490049891174,
+      "train_seconds": 59.0,
+      "clean_macro_f1": 0.9791160133723377,
+      "mean_outage_macro_f1": 0.8187941914113118,
+      "per_scan_mean_macro_f1": 0.9416456089716826,
+      "persistent_mean_macro_f1": 0.9352076285044584,
+      "targeted_mean_macro_f1": 0.5795293367577945
+    }
+  ]
+}

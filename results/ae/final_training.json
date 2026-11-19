@@ -1,0 +1,106 @@
+{
+  "arch": {
+    "encoder": [
+      256,
+      64
+    ],
+    "dropout": 0.2
+  },
+  "fixed": {
+    "l2": 0.0001,
+    "lr": 0.001,
+    "batch": 256
+  },
+  "runs": [
+    {
+      "model": "AE+MLP",
+      "seed": 0,
+      "ap_dropout": 0.0,
+      "ae_epochs": 100,
+      "epochs": 25,
+      "ae_val_mse": 0.0012095370329916477,
+      "train_seconds": 49.3
+    },
+    {
+      "model": "AE+MLP",
+      "seed": 1,
+      "ap_dropout": 0.0,
+      "ae_epochs": 100,
+      "epochs": 23,
+      "ae_val_mse": 0.0011904804268851876,
+      "train_seconds": 49.6
+    },
+    {
+      "model": "AE+MLP",
+      "seed": 2,
+      "ap_dropout": 0.0,
+      "ae_epochs": 100,
+      "epochs": 29,
+      "ae_val_mse": 0.001252665650099516,
+      "train_seconds": 51.9
+    },
+    {
+      "model": "AE+MLP",
+      "seed": 3,
+      "ap_dropout": 0.0,
+      "ae_epochs": 100,
+      "epochs": 24,
+      "ae_val_mse": 0.0011793961748480797,
+      "train_seconds": 51.8
+    },
+    {
+      "model": "AE+MLP",
+      "seed": 4,
+      "ap_dropout": 0.0,
+      "ae_epochs": 100,
+      "epochs": 25,
+      "ae_val_mse": 0.0009851448703557253,
+      "train_seconds": 52.3
+    },
+    {
+      "model": "AE+MLP + APDropout",
+      "seed": 0,
+      "ap_dropout": 0.8,
+      "ae_epochs": 100,
+      "epochs": 42,
+      "ae_val_mse": 0.0004997921641916037,
+      "train_seconds": 58.5
+    },
+    {
+      "model": "AE+MLP + APDropout",
+      "seed": 1,
+      "ap_dropout": 0.8,
+      "ae_epochs": 100,
+      "epochs": 82,
+      "ae_val_mse": 0.0005036306683905423,
+      "train_seconds": 74.8
+    },
+    {
+      "model": "AE+MLP + APDropout",
+      "seed": 2,
+      "ap_dropout": 0.8,
+      "ae_epochs": 100,
+      "epochs": 51,
+      "ae_val_mse": 0.0005147475749254227,
+      "train_seconds": 62.2
+    },
+    {
+      "model": "AE+MLP + APDropout",
+      "seed": 3,
+      "ap_dropout": 0.8,
+      "ae_epochs": 100,
+      "epochs": 44,
+      "ae_val_mse": 0.0005041935364715755,
+      "train_seconds": 59.8
+    },
+    {
+      "model": "AE+MLP + APDropout",
+      "seed": 4,
+      "ap_dropout": 0.8,
+      "ae_epochs": 100,
+      "epochs": 44,
+      "ae_val_mse": 0.0004934719763696194,
+      "train_seconds": 62.5
+    }
+  ]
+}

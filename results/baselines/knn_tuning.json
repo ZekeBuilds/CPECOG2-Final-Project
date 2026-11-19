@@ -1,0 +1,207 @@
+{
+  "best": {
+    "k": 1,
+    "metric": "manhattan",
+    "weights": "uniform",
+    "accuracy": 0.9719042663891779,
+    "macro_f1": 0.9704281060860276
+  },
+  "grid": [
+    {
+      "k": 1,
+      "metric": "euclidean",
+      "weights": "uniform",
+      "accuracy": 0.9695629552549427,
+      "macro_f1": 0.9695878146817939
+    },
+    {
+      "k": 1,
+      "metric": "euclidean",
+      "weights": "distance",
+      "accuracy": 0.9695629552549427,
+      "macro_f1": 0.9695878146817939
+    },
+    {
+      "k": 1,
+      "metric": "manhattan",
+      "weights": "uniform",
+      "accuracy": 0.9719042663891779,
+      "macro_f1": 0.9704281060860276
+    },
+    {
+      "k": 1,
+      "metric": "manhattan",
+      "weights": "distance",
+      "accuracy": 0.9719042663891779,
+      "macro_f1": 0.9704281060860276
+    },
+    {
+      "k": 3,
+      "metric": "euclidean",
+      "weights": "uniform",
+      "accuracy": 0.9687825182101977,
+      "macro_f1": 0.967395414561862
+    },
+    {
+      "k": 3,
+      "metric": "euclidean",
+      "weights": "distance",
+      "accuracy": 0.9690426638917794,
+      "macro_f1": 0.9678342789833874
+    },
+    {
+      "k": 3,
+      "metric": "manhattan",
+      "weights": "uniform",
+      "accuracy": 0.9672216441207075,
+      "macro_f1": 0.9639221217943053
+    },
+    {
+      "k": 3,
+      "metric": "manhattan",
+      "weights": "distance",
+      "accuracy": 0.9690426638917794,
+      "macro_f1": 0.9664038574944708
+    },
+    {
+      "k": 5,
+      "metric": "euclidean",
+      "weights": "uniform",
+      "accuracy": 0.967741935483871,
+      "macro_f1": 0.9659912005361408
+    },
+    {
+      "k": 5,
+      "metric": "euclidean",
+      "weights": "distance",
+      "accuracy": 0.9685223725286161,
+      "macro_f1": 0.9671599321569035
+    },
+    {
+      "k": 5,
+      "metric": "manhattan",
+      "weights": "uniform",
+      "accuracy": 0.9651404786680541,
+      "macro_f1": 0.9614885370367556
+    },
+    {
+      "k": 5,
+      "metric": "manhattan",
+      "weights": "distance",
+      "accuracy": 0.9685223725286161,
+      "macro_f1": 0.9653845862074343
+    },
+    {
+      "k": 7,
+      "metric": "euclidean",
+      "weights": "uniform",
+      "accuracy": 0.9667013527575442,
+      "macro_f1": 0.9645737862332938
+    },
+    {
+      "k": 7,
+      "metric": "euclidean",
+      "weights": "distance",
+      "accuracy": 0.9669614984391259,
+      "macro_f1": 0.964853289616883
+    },
+    {
+      "k": 7,
+      "metric": "manhattan",
+      "weights": "uniform",
+      "accuracy": 0.9656607700312175,
+      "macro_f1": 0.9619603929679575
+    },
+    {
+      "k": 7,
+      "metric": "manhattan",
+      "weights": "distance",
+      "accuracy": 0.967741935483871,
+      "macro_f1": 0.9646424795516348
+    },
+    {
+      "k": 9,
+      "metric": "euclidean",
+      "weights": "uniform",
+      "accuracy": 0.9651404786680541,
+      "macro_f1": 0.9624388288491098
+    },
+    {
+      "k": 9,
+      "metric": "euclidean",
+      "weights": "distance",
+      "accuracy": 0.9667013527575442,
+      "macro_f1": 0.9644086117140098
+    },
+    {
+      "k": 9,
+      "metric": "manhattan",
+      "weights": "uniform",
+      "accuracy": 0.9656607700312175,
+      "macro_f1": 0.9619446714102278
+    },
+    {
+      "k": 9,
+      "metric": "manhattan",
+      "weights": "distance",
+      "accuracy": 0.967741935483871,
+      "macro_f1": 0.9645905979076667
+    },
+    {
+      "k": 11,
+      "metric": "euclidean",
+      "weights": "uniform",
+      "accuracy": 0.9640998959417274,
+      "macro_f1": 0.9612520704801523
+    },
+    {
+      "k": 11,
+      "metric": "euclidean",
+      "weights": "distance",
+      "accuracy": 0.9656607700312175,
+      "macro_f1": 0.9631313560787552
+    },
+    {
+      "k": 11,
+      "metric": "manhattan",
+      "weights": "uniform",
+      "accuracy": 0.964360041623309,
+      "macro_f1": 0.96055829844591
+    },
+    {
+      "k": 11,
+      "metric": "manhattan",
+      "weights": "distance",
+      "accuracy": 0.9674817898022893,
+      "macro_f1": 0.9641282124810805
+    },
+    {
+      "k": 15,
+      "metric": "euclidean",
+      "weights": "uniform",
+      "accuracy": 0.9648803329864725,
+      "macro_f1": 0.9623538264968834
+    },
+    {
+      "k": 15,
+      "metric": "euclidean",
+      "weights": "distance",
+      "accuracy": 0.9654006243496358,
+      "macro_f1": 0.9629047345265993
+    },
+    {
+      "k": 15,
+      "metric": "manhattan",
+      "weights": "uniform",
+      "accuracy": 0.9648803329864725,
+      "macro_f1": 0.9612136974241865
+    },
+    {
+      "k": 15,
+      "metric": "manhattan",
+      "weights": "distance",
+      "accuracy": 0.9672216441207075,
+      "macro_f1": 0.9639826686730348
+    }
+  ]
+}

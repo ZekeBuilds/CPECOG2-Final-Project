@@ -1,0 +1,181 @@
+{
+  "method": "occlusion on val split with the seed-0 normal MLP: importance = drop in val macro-F1",
+  "base_val_macro_f1": 0.9854748925383768,
+  "spearman_rho_freq_vs_importance": 0.518131438582769,
+  "p_value": 1.2574517997163309e-27,
+  "top_set_overlap": {
+    "top 10%": 0.32608695652173914,
+    "top 20%": 0.5934065934065934,
+    "top 30%": 0.6911764705882353
+  },
+  "attack": [
+    {
+      "model": "MLP",
+      "ranking": "frequency (our targeted)",
+      "rate": 0.0,
+      "accuracy": 0.9243924392439244,
+      "macro_f1": 0.9087391487719247
+    },
+    {
+      "model": "MLP",
+      "ranking": "model importance",
+      "rate": 0.0,
+      "accuracy": 0.9243924392439244,
+      "macro_f1": 0.9087391487719247
+    },
+    {
+      "model": "MLP",
+      "ranking": "frequency (our targeted)",
+      "rate": 0.1,
+      "accuracy": 0.72997299729973,
+      "macro_f1": 0.5729242178595736
+    },
+    {
+      "model": "MLP",
+      "ranking": "model importance",
+      "rate": 0.1,
+      "accuracy": 0.6732673267326733,
+      "macro_f1": 0.630610915415163
+    },
+    {
+      "model": "MLP",
+      "ranking": "frequency (our targeted)",
+      "rate": 0.2,
+      "accuracy": 0.43744374437443745,
+      "macro_f1": 0.3530079979452305
+    },
+    {
+      "model": "MLP",
+      "ranking": "model importance",
+      "rate": 0.2,
+      "accuracy": 0.44374437443744374,
+      "macro_f1": 0.4392454899917625
+    },
+    {
+      "model": "MLP",
+      "ranking": "frequency (our targeted)",
+      "rate": 0.3,
+      "accuracy": 0.28352835283528355,
+      "macro_f1": 0.22760431649161358
+    },
+    {
+      "model": "MLP",
+      "ranking": "model importance",
+      "rate": 0.3,
+      "accuracy": 0.2682268226822682,
+      "macro_f1": 0.28743648320701887
+    },
+    {
+      "model": "MLP",
+      "ranking": "frequency (our targeted)",
+      "rate": 0.4,
+      "accuracy": 0.20162016201620162,
+      "macro_f1": 0.15820944073801452
+    },
+    {
+      "model": "MLP",
+      "ranking": "model importance",
+      "rate": 0.4,
+      "accuracy": 0.18721872187218722,
+      "macro_f1": 0.18226039252907827
+    },
+    {
+      "model": "MLP",
+      "ranking": "frequency (our targeted)",
+      "rate": 0.5,
+      "accuracy": 0.0927092709270927,
+      "macro_f1": 0.08671853742045418
+    },
+    {
+      "model": "MLP",
+      "ranking": "model importance",
+      "rate": 0.5,
+      "accuracy": 0.12331233123312331,
+      "macro_f1": 0.12367198852971245
+    },
+    {
+      "model": "MLP + APDropout",
+      "ranking": "frequency (our targeted)",
+      "rate": 0.0,
+      "accuracy": 0.927992799279928,
+      "macro_f1": 0.9152897950200143
+    },
+    {
+      "model": "MLP + APDropout",
+      "ranking": "model importance",
+      "rate": 0.0,
+      "accuracy": 0.927992799279928,
+      "macro_f1": 0.9152897950200143
+    },
+    {
+      "model": "MLP + APDropout",
+      "ranking": "frequency (our targeted)",
+      "rate": 0.1,
+      "accuracy": 0.7893789378937894,
+      "macro_f1": 0.6822396619021309
+    },
+    {
+      "model": "MLP + APDropout",
+      "ranking": "model importance",
+      "rate": 0.1,
+      "accuracy": 0.8541854185418541,
+      "macro_f1": 0.8446229046092337
+    },
+    {
+      "model": "MLP + APDropout",
+      "ranking": "frequency (our targeted)",
+      "rate": 0.2,
+      "accuracy": 0.6408640864086409,
+      "macro_f1": 0.5534494516231573
+    },
+    {
+      "model": "MLP + APDropout",
+      "ranking": "model importance",
+      "rate": 0.2,
+      "accuracy": 0.7776777677767777,
+      "macro_f1": 0.7628738681469254
+    },
+    {
+      "model": "MLP + APDropout",
+      "ranking": "frequency (our targeted)",
+      "rate": 0.3,
+      "accuracy": 0.5076507650765076,
+      "macro_f1": 0.4311130631867215
+    },
+    {
+      "model": "MLP + APDropout",
+      "ranking": "model importance",
+      "rate": 0.3,
+      "accuracy": 0.5652565256525652,
+      "macro_f1": 0.5891376012364243
+    },
+    {
+      "model": "MLP + APDropout",
+      "ranking": "frequency (our targeted)",
+      "rate": 0.4,
+      "accuracy": 0.35283528352835286,
+      "macro_f1": 0.2959860833258476
+    },
+    {
+      "model": "MLP + APDropout",
+      "ranking": "model importance",
+      "rate": 0.4,
+      "accuracy": 0.3708370837083708,
+      "macro_f1": 0.3599972236832552
+    },
+    {
+      "model": "MLP + APDropout",
+      "ranking": "frequency (our targeted)",
+      "rate": 0.5,
+      "accuracy": 0.17641764176417643,
+      "macro_f1": 0.16275438608693654
+    },
+    {
+      "model": "MLP + APDropout",
+      "ranking": "model importance",
+      "rate": 0.5,
+      "accuracy": 0.2502250225022502,
+      "macro_f1": 0.26645452482527143
+    }
+  ]
+}

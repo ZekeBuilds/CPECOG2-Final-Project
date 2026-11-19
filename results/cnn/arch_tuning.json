@@ -1,0 +1,55 @@
+{
+  "rule": "max clean val macro-F1, ties -> fewer params",
+  "fixed": {
+    "l2": 0.0001,
+    "lr": 0.001,
+    "batch": 256
+  },
+  "best": {
+    "proj": 256,
+    "dropout": 0.4,
+    "params": 671885,
+    "epochs": 31,
+    "train_seconds": 90.3,
+    "accuracy": 0.986732570239334,
+    "macro_f1": 0.9860336403866555
+  },
+  "grid": [
+    {
+      "proj": 128,
+      "dropout": 0.2,
+      "params": 342541,
+      "epochs": 34,
+      "train_seconds": 56.0,
+      "accuracy": 0.9841311134235172,
+      "macro_f1": 0.9841183567087177
+    },
+    {
+      "proj": 128,
+      "dropout": 0.4,
+      "params": 342541,
+      "epochs": 27,
+      "train_seconds": 45.2,
+      "accuracy": 0.9812695109261186,
+      "macro_f1": 0.9809820689873051
+    },
+    {
+      "proj": 256,
+      "dropout": 0.2,
+      "params": 671885,
+      "epochs": 41,
+      "train_seconds": 128.5,
+      "accuracy": 0.9846514047866806,
+      "macro_f1": 0.984281977650372
+    },
+    {
+      "proj": 256,
+      "dropout": 0.4,
+      "params": 671885,
+      "epochs": 31,
+      "train_seconds": 90.3,
+      "accuracy": 0.986732570239334,
+      "macro_f1": 0.9860336403866555
+    }
+  ]
+}
