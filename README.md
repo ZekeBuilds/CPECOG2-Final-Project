@@ -19,7 +19,7 @@ We focus on **targeted outages**: the APs that phones hear most often fail first
 | Model code (KNN, MLP, AE + MLP, 1D-CNN, APDropout layer) | Built and tested | 100% |
 | Training and hyperparameter tuning | All runs done, 5 seeds | ~95% |
 | Testing and error analysis | Done on the test file | 100% |
-| Streamlit demo | Planned for Nov 21 | 0% |
+| Streamlit demo (`app.py`) | Built; backup video not recorded yet | ~90% |
 | Final written report (IEEE) | Planned for Nov 22 | ~20% |
 | Presentation slides | Planned for Nov 22 | 0% |
 
@@ -28,7 +28,7 @@ We focus on **targeted outages**: the APs that phones hear most often fail first
 ## Next steps
 
 Code
-- [ ] Streamlit demo (`app.py`): pick a model, outage type and outage rate, run the outage simulation on the test scans live, and draw the graphs in the app. Every graph we present must come from the app.
+- [x] Streamlit demo (`app.py`): pick a model, outage type and outage rate, run the outage simulation on the test scans live, and draw the graphs in the app. Every graph we present must come from the app.
 - [ ] Commit the train/validation split (`data/processed/split.npz`) so everyone uses the same split.
 - [ ] Pin exact library versions in `requirements.txt`.
 - [ ] Test the setup in a fresh environment by following this README from scratch.
@@ -84,6 +84,20 @@ python -m pytest -q tests
 
 The dataset goes to `data/raw/UJIndoorLoc/`. It is not in the repo.
 
+## Running the demo
+
+```
+streamlit run app.py
+```
+
+Then open http://localhost:8501. The first start takes about 30 seconds (it loads the dataset, fits KNN and loads the six saved DNNs). Pick a model family, outage type and share of APs failed in the sidebar. Every number and graph is computed live on the test file:
+
+- **Model comparison:** macro-F1 or accuracy of the normal DNN, the APDropout DNN and KNN at the chosen setting, and the curve from 0 to 50% APs failed.
+- **One scan:** the APs one test scan heard, ranked by how often training scans detect them, with the ones the outage switched off in red (APs never heard in training are counted but not drawn); and where each model places the scan.
+- **Error analysis:** confusion matrices and wrong-building vs wrong-floor counts.
+
+KNN takes about 2.5 s per run, so a random outage curve with 5 seeds and KNN on takes about a minute the first time. Finished runs are cached. With 5 outage seeds, KNN numbers match the results table exactly. With fewer seeds, random outages (persistent most of all) can differ from the table by several points. DNN numbers come from the seed-0 models only, so they differ from the 5-model averages in the table.
+
 ## Running the experiments
 
 Run every command from the project root. Results are saved to `results/`, and trained models to `models/`. You only need to rerun these if you change the code, because the results and the seed-0 models are already in the repo.
@@ -106,9 +120,11 @@ src/
   outage.py      AP outage simulator (per-scan, persistent, targeted)
   models.py      APDropout layer, MLP, autoencoder + MLP, 1D-CNN
   evaluate.py    shared outage evaluation and plots
+  demo.py        logic and figures for the Streamlit demo
   plotstyle.py   shared chart style
 scripts/         runnable steps (see the table above)
-tests/           unit tests for the simulator and models
+app.py           Streamlit demo
+tests/           unit tests for the simulator, models and demo helpers
 results/         generated tables, logs and figures
 models/          trained seed-0 models (.keras), used by the demo
 ```
