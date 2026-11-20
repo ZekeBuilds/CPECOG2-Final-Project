@@ -29,9 +29,9 @@ We focus on **targeted outages**: the APs that phones hear most often fail first
 
 Code
 - [x] Streamlit demo (`app.py`): pick a model, outage type and outage rate, run the outage simulation on the test scans live, and draw the graphs in the app. Every graph we present must come from the app.
-- [ ] Commit the train/validation split (`data/processed/split.npz`) so everyone uses the same split.
-- [ ] Pin exact library versions in `requirements.txt`.
-- [ ] Test the setup in a fresh environment by following this README from scratch.
+- [x] Same train/validation split for everyone: `load_splits()` regenerates it identically on a fresh clone (checked), so `split.npz` stays out of the repo.
+- [x] Pin exact library versions in `requirements.txt`.
+- [x] Test the setup in a fresh environment by following this README from scratch (Nov 20: install, download, tests and demo all pass with identical numbers).
 - [ ] Record a backup video of the demo in case the live demo fails.
 
 Report (IEEE format)
@@ -74,9 +74,11 @@ Main figure: `results/summary/test_macro_f1_bars.png`.
 
 ## Setup
 
-Python 3.12. From the project folder:
+Python 3.12. From the project folder (a virtual environment is optional but keeps the pinned versions separate):
 
 ```
+python -m venv .venv
+.venv\Scripts\activate
 pip install -r requirements.txt
 python -m scripts.download_data
 python -m pytest -q tests
