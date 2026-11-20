@@ -74,7 +74,17 @@ Main figure: `results/summary/test_macro_f1_bars.png`.
 
 ## Setup
 
-Python 3.12. From the project folder (a virtual environment is optional but keeps the pinned versions separate):
+You need Python 3.12, 64-bit. On Windows, get "Windows installer (64-bit)" from the [Python 3.12.10 page](https://www.python.org/downloads/release/python-31210/) and tick "Add python.exe to PATH". The main python.org download button gives a newer version, which TensorFlow 2.21 and the saved models were not built with.
+
+**Windows, one command.** From the project folder:
+
+```
+powershell -ExecutionPolicy Bypass -File setup.ps1
+```
+
+It checks for Python 3.12, creates `.venv`, installs the pinned requirements, downloads the dataset and runs the tests. The first run takes several minutes. Running it again only re-checks, so it is safe to repeat.
+
+**Manual (any OS).** From the project folder. On macOS or Linux, activate with `source .venv/bin/activate`. If Windows PowerShell says running scripts is disabled, run `Set-ExecutionPolicy -Scope Process Bypass` in that window first.
 
 ```
 python -m venv .venv
@@ -87,6 +97,14 @@ python -m pytest -q tests
 The dataset goes to `data/raw/UJIndoorLoc/`. It is not in the repo.
 
 ## Running the demo
+
+On Windows after `setup.ps1`:
+
+```
+powershell -ExecutionPolicy Bypass -File run_demo.ps1
+```
+
+After a manual setup, with `.venv` activated:
 
 ```
 streamlit run app.py
@@ -126,6 +144,8 @@ src/
   plotstyle.py   shared chart style
 scripts/         runnable steps (see the table above)
 app.py           Streamlit demo
+setup.ps1        one-command Windows setup (Python check, .venv, requirements, dataset, tests)
+run_demo.ps1     starts the demo with .venv
 tests/           unit tests for the simulator, models and demo helpers
 results/         generated tables, logs and figures
 models/          trained seed-0 models (.keras), used by the demo
