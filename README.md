@@ -49,7 +49,7 @@ Presentation
 - [ ] Every member can explain any part of the project.
 
 Optional
-- [ ] Let the autoencoder pretrain past its 100-epoch cap.
+- [x] Let the autoencoder pretrain past its 100-epoch cap. Checked with a 300-epoch cap: the validation score each model is selected on got slightly worse, so the 100-epoch models stay (`results/ae/pretrain_cap_check.json`).
 - [ ] Try an APDropout rate above 0.9 for the MLP (0.9 was the edge of the grid).
 
 ## Results so far
@@ -130,7 +130,7 @@ Run every command from the project root. Results are saved to `results/`, and tr
 | `python -m scripts.summarize` | Cross-model table and bar chart (`results/summary/`) | < 1 min |
 | `python -m scripts.analyze` | Confusion matrices, error analysis, Assumption 2 check (`results/analysis/`) | ~3 min |
 
-`train_dnn` has four stages that can run one at a time: `arch`, `hparams`, `apdrop`, `final`. The test file is used only in `final`. Every tuning choice is made on the validation split.
+`train_dnn` has four stages that can run one at a time: `arch`, `hparams`, `apdrop`, `final`. The AE family also has a `pretrain` check (300 vs 100 pretraining epochs, about 6 min). The test file is used only in `final`. Every tuning choice is made on the validation split.
 
 ## Repo layout
 

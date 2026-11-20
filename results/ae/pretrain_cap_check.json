@@ -1,0 +1,50 @@
+{
+  "rule": "adopt cap 300 only if neither model gets worse and one gains > 0.5 points (normal: clean val macro-F1; APDropout: mean val outage macro-F1); seed 0",
+  "gain_points": {
+    "0.0": -0.13,
+    "0.8": -0.41
+  },
+  "adopted_cap": 100,
+  "runs": [
+    {
+      "ap_dropout": 0.0,
+      "ae_epoch_cap": 100,
+      "ae_epochs": 100,
+      "epochs": 25,
+      "ae_val_mse": 0.0012095370329916477,
+      "train_seconds": 52.4,
+      "clean_macro_f1": 0.9836558145544722,
+      "mean_outage_macro_f1": 0.7384717287288711
+    },
+    {
+      "ap_dropout": 0.0,
+      "ae_epoch_cap": 300,
+      "ae_epochs": 275,
+      "epochs": 23,
+      "ae_val_mse": 0.0001785186177585274,
+      "train_seconds": 124.8,
+      "clean_macro_f1": 0.9823742368262806,
+      "mean_outage_macro_f1": 0.7396840939148922
+    },
+    {
+      "ap_dropout": 0.8,
+      "ae_epoch_cap": 100,
+      "ae_epochs": 100,
+      "epochs": 42,
+      "ae_val_mse": 0.0004997921641916037,
+      "train_seconds": 65.6,
+      "clean_macro_f1": 0.979158618739474,
+      "mean_outage_macro_f1": 0.8299365195260315
+    },
+    {
+      "ap_dropout": 0.8,
+      "ae_epoch_cap": 300,
+      "ae_epochs": 172,
+      "epochs": 52,
+      "ae_val_mse": 0.00042957710684277117,
+      "train_seconds": 101.6,
+      "clean_macro_f1": 0.9823992262727828,
+      "mean_outage_macro_f1": 0.8258847067490436
+    }
+  ]
+}

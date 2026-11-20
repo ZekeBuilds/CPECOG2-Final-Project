@@ -4,6 +4,7 @@
   python -m scripts.train_dnn <family> hparams  # sweep lr, batch, l2 one at a time (seed 0) + learning curves
   python -m scripts.train_dnn <family> apdrop   # pick APDropout max_rate on val OUTAGES (seed 0)
   python -m scripts.train_dnn <family> final    # 5 seeds each, outage curves on val and test, save models
+  python -m scripts.train_dnn ae pretrain       # AE only: check a 300-epoch pretraining cap vs 100 (val, seed 0)
   python -m scripts.train_dnn <family> all      # the four stages in order
 
 family is one of: mlp, ae, cnn.
@@ -44,11 +45,11 @@ def train_mlp(s, seed, ap_dropout=0.0, lr=FIXED["lr"], l2=FIXED["l2"], batch=BAT
 
 
 def train_ae(s, seed, ap_dropout=0.0, encoder=(256, 128), dropout=0.2, head_units=128,
-             lr=FIXED["lr"], l2=FIXED["l2"], batch=BATCH):
+             lr=FIXED["lr"], l2=FIXED["l2"], batch=BATCH, ae_epochs=100):
     """Unsupervised (denoising if ap_dropout > 0) pretraining on the train split, then fine-tuning."""
     keras.utils.set_random_seed(seed)
     ae, enc = build_autoencoder(encoder=encoder, ap_dropout=ap_dropout, lr=lr, seed=seed)
-    h_ae = fit(ae, s["x_train"], s["x_train"], s["x_val"], s["x_val"], epochs=100, patience=10,
+    h_ae = fit(ae, s["x_train"], s["x_train"], s["x_val"], s["x_val"], epochs=ae_epochs, patience=10,
                batch_size=batch)
     model = build_ae_classifier(enc, head_units=head_units, dropout=dropout, seed=seed, lr=lr, l2=l2)
     hist = fit(model, s["x_train"], s["y_train"], s["x_val"], s["y_val"], batch_size=batch)
@@ -205,6 +206,36 @@ class Run:
             "rule": "max val macro-F1 averaged over 3 scenarios x 6 rates (rate 0.0 = normal model, reference only)",
             "arch": arch, "best": best, "grid": log}, indent=2))
         print("BEST", best, flush=True)
+
+    def pretrain(self):
+        """AE only: does a longer pretraining cap (300 vs 100 epochs) help? Seed 0, val only.
+        Same rules as the other stages: normal model judged on clean val macro-F1, APDropout model on
+        val macro-F1 averaged over 3 scenarios x 6 rates; adopt 300 only if both don't get worse and
+        one gains more than ADOPT_MARGIN."""
+        assert self.key == "ae", "pretrain stage is for the AE family only"
+        arch = self.best_arch()
+        ap_rate = self.load("apdrop_tuning.json")["best"]["ap_dropout"]
+        log = []
+        for rate, cap in itertools.product([0.0, ap_rate], [100, 300]):
+            model, info = self.train(0, ap_dropout=rate, ae_epochs=cap, **arch)
+            df = outage_curve(self.predictor(model), self.s["sim"], self.s["x_val_raw"], self.s["y_val"],
+                              f"r={rate} cap={cap}", "val", seeds=(0,))
+            row = {"ap_dropout": rate, "ae_epoch_cap": cap, **info,
+                   "clean_macro_f1": float(df[df.rate == 0].macro_f1.mean()),
+                   "mean_outage_macro_f1": float(df.macro_f1.mean())}
+            log.append(row)
+            print(row, flush=True)
+        key = {0.0: "clean_macro_f1", ap_rate: "mean_outage_macro_f1"}
+        gain = {rate: next(r for r in log if r["ap_dropout"] == rate and r["ae_epoch_cap"] == 300)[key[rate]]
+                - next(r for r in log if r["ap_dropout"] == rate and r["ae_epoch_cap"] == 100)[key[rate]]
+                for rate in key}
+        adopt = min(gain.values()) >= 0 and max(gain.values()) > ADOPT_MARGIN
+        (self.out / "pretrain_cap_check.json").write_text(json.dumps({
+            "rule": f"adopt cap 300 only if neither model gets worse and one gains > {ADOPT_MARGIN * 100:.1f} "
+                    "points (normal: clean val macro-F1; APDropout: mean val outage macro-F1); seed 0",
+            "gain_points": {str(k): round(v * 100, 2) for k, v in gain.items()},
+            "adopted_cap": 300 if adopt else 100, "runs": log}, indent=2))
+        print("GAIN (points)", {k: round(v * 100, 2) for k, v in gain.items()}, "ADOPT 300:", adopt, flush=True)
 
     def final(self):
         arch = self.best_arch()
